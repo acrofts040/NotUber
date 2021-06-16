@@ -24,36 +24,42 @@
 				var marker = new google.maps.Marker({
 					position: landmark1,
 					title: "Car 1"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 
 				var marker = new google.maps.Marker({
 					position: landmark2,
 					title: "car 2"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 				
 				var marker = new google.maps.Marker({
 					position: landmark3,
 					title: "Car 3"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 
 				var marker = new google.maps.Marker({
 					position: landmark4,
 					title: "car 4"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 				
 				var marker = new google.maps.Marker({
 					position: landmark5,
 					title: "Car 5"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 
 				var marker = new google.maps.Marker({
 					position: landmark6,
 					title: "car 6"
+					icon: 'car.png'
 				});
 				marker.setMap(map);
 				
