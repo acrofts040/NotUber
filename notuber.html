@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="./index.js"></script>
-    <link rel="stylesheet" href="gmap.css" />
-  </head>
-  <body>
-    <div id="map"></div>
 
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgK-4YPQFXL43bzd41JOk1ILaOJn94xTA&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-  </body>
+<html lang="en">
+
+	<head>
+		<title>Google Maps API version 3 Example</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ6s10CDrTlgfIpVYL-h9gJmjma--z8qA"></script>
+		<link rel="stylesheet" href="gmap.css" />
+		<script>
+			function init()
+			{
+				// Faneuil Hall
+				var landmark = new google.maps.LatLng(42.3599611, -71.0567528);
+			
+				// Set up map
+				var myOptions = {
+					zoom: 13, // The larger the zoom number, the bigger the zoom
+					center: landmark,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				// Create the map in the "map_canvas" <div>
+				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+				// Create a marker				
+				var marker = new google.maps.Marker({
+					position: landmark,
+					title: "Faneuil Hall, Boston, MA"
+				});
+				marker.setMap(map);
+
+				// This is a global info window...
+				var infowindow = new google.maps.InfoWindow();
+				
+				// Open info window on click of marker
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+			}
+		</script>
+	</head>
+	
+	<body onload="init()">
+		<div id="map_canvas"></div>
+	</body>
 </html>
