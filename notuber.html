@@ -12,7 +12,8 @@
 			{
 				// Car 1
 				var landmark1 = new google.maps.LatLng(42.3453, -71.0464);
-			
+				var landmark2 = new google.maps.LatLng(42.3662, -71.0621);
+				
 				// Set up map
 				var myOptions = {
 					zoom: 13, // The larger the zoom number, the bigger the zoom
@@ -30,6 +31,13 @@
 				});
 				marker.setMap(map);
 
+				var marker = new google.maps.Marker({
+					position: landmark2,
+					title: "car 2"
+				});
+				marker.setMap(map);
+				
+				
 				// This is a global info window...
 				var infowindow = new google.maps.InfoWindow();
 				
