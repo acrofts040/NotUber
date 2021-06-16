@@ -1,16 +1,18 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
 
-<html lang="en">
-
-	<head>
-		<title>Google Maps API version 3 Example</title>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ6s10CDrTlgfIpVYL-h9gJmjma--z8qA"></script>
-		<link rel="stylesheet" href="gmap.css" />
-		<script> src="./index.js"</script>
-	</head>
-	
-	<body onload="init()">
-		<div id="map_canvas"></div>
-	</body>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ6s10CDrTlgfIpVYL-h9gJmjma--z8qA&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
 </html>
