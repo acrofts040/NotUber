@@ -10,13 +10,13 @@
 		<script>
 			function init()
 			{
-				// Faneuil Hall
-				var landmark = new google.maps.LatLng(42.3599611, -71.0567528);
+				// Car 1
+				var landmark1 = new google.maps.LatLng(42.3453, -71.0464);
 			
 				// Set up map
 				var myOptions = {
 					zoom: 13, // The larger the zoom number, the bigger the zoom
-					center: landmark,
+					center: landmark1,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};
 				
@@ -25,7 +25,7 @@
 
 				// Create a marker				
 				var marker = new google.maps.Marker({
-					position: landmark,
+					position: landmark1,
 					title: "Faneuil Hall, Boston, MA"
 				});
 				marker.setMap(map);
