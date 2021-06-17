@@ -9,8 +9,7 @@
     function loadMessages() {
       jsonData = '[{"id":1,"content":"Do you really want to hurt me?","username":"Boy"},{"id":2,"content":"Do you really want to make me cry?","username":"George"}]';
       const myArr = JSON.parse(jsonData);
-      document.getElementById("messages").innerHTML = myArr[0].content + "\r\n" + myArr[0].username;
-      document.getElementById("messages").innerHTML = myArr[1].content + " " + myArr[1].username;
+      document.getElementById("messages").innerHTML = myArr[0].content + "\r\n" + myArr[0].username + \r\n + myArr[1].content + " " + myArr[1].username;
     }
   </script>
 </head>
