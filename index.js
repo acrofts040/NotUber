@@ -8,7 +8,9 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
-				console.log(navigator.geolocation.getCurrentPosition());
+				navigator.geolocation.getCurrentPosition(function(position){
+					console.log(position);
+				});
 				
 				// Set up map
 				var myOptions = {
