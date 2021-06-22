@@ -8,7 +8,7 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
-				var mylocation = navigator.geolocation
+				console.log(navigator.geolocation.getCurrentPosition(success[, error[, [options]]))
 				
 				// Set up map
 				var myOptions = {
@@ -63,12 +63,7 @@ function init()
 				});
 				marker.setMap(map);
 				
-				var marker = new google.maps.Marker({
-					position: mylocation,
-					title: "my location",
-				});
-				marker.setMap(map);
-				
+			
 				
 				// This is a global info window...
 				var infowindow = new google.maps.InfoWindow();
