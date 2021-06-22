@@ -14,7 +14,7 @@ function init()
 				});
 				
 				
-				// Set up map
+				// Set up map with marker at curlocation
 				var myOptions = {
 					zoom: 13, // The larger the zoom number, the bigger the zoom
 					center: landmark0,
