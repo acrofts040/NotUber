@@ -8,6 +8,7 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
+				var mylocation = navigator.geolocation
 				
 				// Set up map
 				var myOptions = {
@@ -59,6 +60,12 @@ function init()
 					position: landmark6,
 					title: "car 6",
 					icon: 'car.png'
+				});
+				marker.setMap(map);
+				
+				var marker = new google.maps.Marker({
+					position: mylocation,
+					title: "my location",
 				});
 				marker.setMap(map);
 				
