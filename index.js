@@ -10,7 +10,7 @@ function init()
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
 				
 				navigator.geolocation.getCurrentPosition((position) => {
-  					console.log("LATITUDE: " + position.coords.latitude);
+					var curlocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				});
 				
 				
@@ -67,7 +67,13 @@ function init()
 				});
 				marker.setMap(map);
 				
-			
+				var marker = new google.maps.Marker({
+					position: curlocation,
+					title: "current location"
+				});
+				marker.setMap(map);
+				
+				
 				
 				// This is a global info window...
 				var infowindow = new google.maps.InfoWindow();
