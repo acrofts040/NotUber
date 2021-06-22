@@ -12,7 +12,7 @@ function init()
 					console.log(position);
 				});
 				
-				// Set up map
+				// Set up 
 				var myOptions = {
 					zoom: 13, // The larger the zoom number, the bigger the zoom
 					center: landmark0,
