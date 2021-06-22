@@ -10,7 +10,7 @@ function init()
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
 				
 				navigator.geolocation.getCurrentPosition((position) => {
-  					console.log(position.coords.latitude);
+  					console.log("LATITUDE: " + position.coords.latitude);
 				});
 				
 				
