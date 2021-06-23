@@ -8,12 +8,14 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
+				
+				/*
 				var curlocation = new google.maps.LatLng(42.3542, -71.0704);
 				
 				navigator.geolocation.getCurrentPosition((position) => {
 					curlocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				});
-				
+				*/
 				
 				// Set up map with marker at curlocation
 				var myOptions = {
@@ -69,7 +71,7 @@ function init()
 				marker.setMap(map);
 				
 				var marker = new google.maps.Marker({
-					position: curlocation,
+					position: navigator.geolocation.getCurrentPosition((position),
 					title: "current location"
 				});
 				marker.setMap(map);
