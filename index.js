@@ -71,7 +71,7 @@ function init()
 				marker.setMap(map);
 				
 				var marker = new google.maps.Marker({
-					position: navigator.geolocation.getCurrentPosition((position),
+					position: navigator.geolocation.getCurrentPosition((position)),
 					title: "current location"
 				});
 				marker.setMap(map);
