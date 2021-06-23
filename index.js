@@ -135,7 +135,6 @@ function init()
 				var infowindow = new google.maps.InfoWindow();
 				
 				
-				console.log(crd.latitude)
 				
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
