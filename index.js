@@ -11,7 +11,7 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
-				
+				var curlocation;
 				
 				var options = {
   					enableHighAccuracy: true,
@@ -25,7 +25,7 @@ function init()
 				  	console.log(`Latitude : ${crd.latitude}`);
 				  	console.log(`Longitude: ${crd.longitude}`);
 				  	console.log(`More or less ${crd.accuracy} meters.`);
-					var curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
+					let curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 				}
 
 				function error(err) {
