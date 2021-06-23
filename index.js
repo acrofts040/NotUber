@@ -11,6 +11,37 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
+				
+				
+				
+				
+				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				
+				
+				
+				var lat = -99999;
+				var lng = -99999;
+				function getLocation() {
+					console.log("I am here 1");
+					navigator.geolocation.getCurrentPosition(function(somePos) {
+						console.log("I am here 2");
+						lat = somePos.coords.latitude;
+						lng = somePos.coords.longitude;
+						printLocation(lat,lng);
+					});
+					console.log("I am here 3");
+				}
+
+				function printLocation(lat, lng) {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(lat, lng);,
+						title: 'current location'
+					});
+					marker.setMap(map);
+				}	
+				
+				
+				
 				var crd;
 				
 				var options = {
