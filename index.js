@@ -40,6 +40,8 @@ function init()
 					marker.setMap(map);
 				}	
 				
+				getLocation();
+				
 				/*
 				
 				var crd;
