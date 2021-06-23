@@ -1,4 +1,7 @@
 function init()
+
+			//NEW EDITS ADDED
+			
 			{
 				// set 6 cars
 				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
@@ -8,13 +11,30 @@ function init()
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
-				var curlocation = new google.maps.LatLng(42.01, -71.0704);
 				
-				navigator.geolocation.getCurrentPosition((position) => {
-					console.log("OUT");
-					console.log(typeof position.coords.latitude);
-					var curlocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-				});
+				
+				var options = {
+  					enableHighAccuracy: true,
+  					timeout: 5000,
+  					maximumAge: 0
+				};
+
+				function success(pos) {
+ 	 				var crd = pos.coords;
+				  	console.log('Your current position is:');
+				  	console.log(`Latitude : ${crd.latitude}`);
+				  	console.log(`Longitude: ${crd.longitude}`);
+				  	console.log(`More or less ${crd.accuracy} meters.`);
+				}
+
+				function error(err) {
+				  console.warn(`ERROR(${err.code}): ${err.message}`);
+				}
+
+				navigator.geolocation.getCurrentPosition(success, error, options);
+				
+				var curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
+				
 				
 				
 				// Set up map with marker at 
