@@ -102,6 +102,9 @@ function init()
 				// This is a global info window...
 				var infowindow = new google.maps.InfoWindow();
 				
+				
+				console.log(curlocation)
+				
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(marker.title);
