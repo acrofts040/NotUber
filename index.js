@@ -37,6 +37,7 @@ function init()
 				
 				
 				
+				
 				// Set up map with marker at 
 				var myOptions = {
 					zoom: 13, // The larger the zoom number, the bigger the zoom
@@ -109,5 +110,18 @@ function init()
 					infowindow.setContent(marker.title);
 					infowindow.open(map, marker);
 				});
+				
+				
+				
+				function reqListener () {
+  					console.log(this.responseText);
+				}
+
+				var oReq = new XMLHttpRequest();
+				oReq.addEventListener("load", reqListener);
+				oReq.open("GET", "https://jordan-marsh.herokuapp.com/rides");
+				oReq.send();
+
+				
 			}
 		
