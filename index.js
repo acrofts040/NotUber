@@ -93,7 +93,7 @@ function init()
 				
 				var marker = new google.maps.Marker({
 					position: curlocation,
-					title: "current location"
+					title: 'current location'
 				});
 				marker.setMap(map);
 				
