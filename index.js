@@ -1,6 +1,6 @@
 function init()
 			{
-				// Car 1
+				// Car 
 				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
 				var landmark1 = new google.maps.LatLng(42.3453, -71.0464);
 				var landmark2 = new google.maps.LatLng(42.3662, -71.0621);
