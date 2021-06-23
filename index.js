@@ -122,12 +122,13 @@ function init()
 				});
 				marker.setMap(map);
 				
+				/*
 				var marker = new google.maps.Marker({
 					position: curlocation,
 					title: 'current location'
 				});
 				marker.setMap(map);
-				
+				*/
 				
 				
 				// This is a global info window...
