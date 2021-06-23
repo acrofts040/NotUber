@@ -12,7 +12,7 @@ function init()
 				
 				navigator.geolocation.getCurrentPosition((position) => {
 					console.log("OUT");
-					console.log(position.coords);
+					console.log(typeof position.coords.latitude);
 					var curlocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				});
 				
