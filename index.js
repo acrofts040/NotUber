@@ -34,7 +34,7 @@ function init()
 
 				function printLocation(lat, lng) {
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(lat, lng);,
+						position: new google.maps.LatLng(lat, lng),
 						title: 'current location'
 					});
 					marker.setMap(map);
