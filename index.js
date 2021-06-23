@@ -14,6 +14,7 @@ function init()
 				
 				navigator.geolocation.getCurrentPosition((position) => {
 					console.log("OUT");
+					console.log(position.coords);
 					curlocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 				});
 				
