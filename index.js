@@ -25,7 +25,7 @@ function init()
 				  	console.log(`Latitude : ${crd.latitude}`);
 				  	console.log(`Longitude: ${crd.longitude}`);
 				  	console.log(`More or less ${crd.accuracy} meters.`);
-					let curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
+					curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 				}
 
 				function error(err) {
