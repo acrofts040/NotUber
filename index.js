@@ -1,6 +1,6 @@
 function init()
 
-			//NEW EDITS ADDED
+			//NEWER EDITS ADDED
 			
 			{
 				// set 6 cars
