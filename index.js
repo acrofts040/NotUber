@@ -40,7 +40,7 @@ function init()
 					marker.setMap(map);
 				}	
 				
-				
+				/*
 				
 				var crd;
 				
@@ -66,7 +66,7 @@ function init()
 				
 				var curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
 				
-				
+				*/
 				
 				
 				// Set up map with marker at 
