@@ -22,14 +22,11 @@ function init()
 				var lat = -99999;
 				var lng = -99999;
 				function getLocation() {
-					console.log("I am here 1");
 					navigator.geolocation.getCurrentPosition(function(somePos) {
-						console.log("I am here 2");
 						lat = somePos.coords.latitude;
 						lng = somePos.coords.longitude;
 						printLocation(lat,lng);
 					});
-					console.log("I am here 3");
 				}
 
 				function printLocation(lat, lng) {
@@ -42,33 +39,6 @@ function init()
 				
 				getLocation();
 				
-				/*
-				
-				var crd;
-				
-				var options = {
-  					enableHighAccuracy: true,
-  					timeout: 5000,
-  					maximumAge: 0
-				};
-
-				function success(pos) {
- 	 				var crd = pos.coords;
-				  	console.log('Your current position is:');
-				  //	console.log(`Latitude : ${crd.latitude}`);
-				  //	console.log(`Longitude: ${crd.longitude}`);
-				  //	console.log(`More or less ${crd.accuracy} meters.`);
-				}
-
-				function error(err) {
-				  console.warn(`ERROR(${err.code}): ${err.message}`);
-				}
-
-				navigator.geolocation.getCurrentPosition(success, error, options);
-				
-				var curlocation = new google.maps.LatLng(crd.latitude, crd.longitude);
-				
-				*/
 				
 				
 				// Set up map with marker at 
