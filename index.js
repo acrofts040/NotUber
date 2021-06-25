@@ -145,6 +145,38 @@ function init()
 				});
 				
 				
+
+				console.log("Here I am 1");
+				request = new XMLHttpRequest();
+
+				
+				// Step 2: Make request to the JSON source
+				request.open("POST", "https://jordan-marsh.herokuapp.com/rides", true);
+        
+        			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
+        			var params = "username=PT88yXTq&lat=40.01&lng=-71.001";
+
+				// Step 3: What to do when we get a response back
+				console.log("Here I am 2");
+				request.onreadystatechange = function() {
+					// Step 5: parse the JSON data from response
+					console.log("Here I am 3");
+					if (request.readyState == 4 && request.status == 200) {
+          					console.log(request.status)
+           					var p = JSON.parse(request.responseText);
+						console.log(p[0].lat);
+					}
+				};
+
+				console.log("Here I am 5");
+				request.send(params);
+				console.log(request.responsetext);
+				
+
+				
+				
+				
 				
 			}
 		
