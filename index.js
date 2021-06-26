@@ -126,6 +126,7 @@ function init()
         			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         
         			var params = "username=PT88yXTq&lat=" +  toString(lat) + "&lng=" + toString(lng);
+				console.log(params);
 
 				// Step 3: What to do when we get a response back
 				console.log("Here I am 2");
