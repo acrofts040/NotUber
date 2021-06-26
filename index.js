@@ -36,7 +36,7 @@ function init()
 					});
 					marker.setMap(map);
 
-					console.log("Here I am 1");
+					console.log(lat);
 					request = new XMLHttpRequest();
 
 
