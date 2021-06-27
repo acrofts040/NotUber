@@ -98,6 +98,12 @@ function init()
 					icon: 'car.png'
 				});
 				marker.setMap(map);
+				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+				
 
 				var marker = new google.maps.Marker({
 					position: landmark2,
@@ -106,12 +112,26 @@ function init()
 				});
 				marker.setMap(map);
 				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+				
+				
 				var marker = new google.maps.Marker({
 					position: landmark3,
 					title: "Car 3",
 					icon: 'car.png'
 				});
 				marker.setMap(map);
+				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+				
+				
+				
 
 				var marker = new google.maps.Marker({
 					position: landmark4,
@@ -120,12 +140,27 @@ function init()
 				});
 				marker.setMap(map);
 				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+				
+				
+				
 				var marker = new google.maps.Marker({
 					position: landmark5,
 					title: "Car 5",
 					icon: 'car.png'
 				});
 				marker.setMap(map);
+				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+				
+				
+				
 
 				var marker = new google.maps.Marker({
 					position: landmark6,
