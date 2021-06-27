@@ -57,6 +57,17 @@ function init()
 							console.log(request.status)
 							var p = JSON.parse(request.responseText);
 							console.log(p[0].lat);
+							console.log(p[0].lng);
+							console.log(p[0].username);
+							
+							var closest = new google.maps.LatLng(p[0].lat, p[0].lng);
+							
+							var marker = new google.maps.Marker({
+								position: closest,
+								title: "closest uber",
+								icon: 'car.png'
+							});
+								marker.setMap(map);
 						}
 					};
 
@@ -122,6 +133,12 @@ function init()
 					icon: 'car.png'
 				});
 				marker.setMap(map);
+				
+				
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
 				
 				
 				
