@@ -12,7 +12,7 @@ function init()
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
 				
-				
+				var infowindow = new google.maps.InfoWindow();
 				
 				
 				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
