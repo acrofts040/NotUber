@@ -92,87 +92,87 @@ function init()
 				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
 				// Create a marker				
-				var marker = new google.maps.Marker({
+				var marker1 = new google.maps.Marker({
 					position: landmark1,
 					title: "Car 1",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker1.setMap(map);
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker1, 'click', function() {
+					infowindow.setContent(marker1.title);
+					infowindow.open(map, marker1);
 				});
 				
 
-				var marker = new google.maps.Marker({
+				var marker2 = new google.maps.Marker({
 					position: landmark2,
 					title: "car 2",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker2.setMap(map);
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker2, 'click', function() {
+					infowindow.setContent(marker2.title);
+					infowindow.open(map, marker2);
 				});
 				
 				
-				var marker = new google.maps.Marker({
+				var marker3 = new google.maps.Marker({
 					position: landmark3,
 					title: "Car 3",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker3.setMap(map);
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker3, 'click', function() {
+					infowindow.setContent(marker3.title);
+					infowindow.open(map, marker3);
 				});
 				
 				
 				
 
-				var marker = new google.maps.Marker({
+				var marker4 = new google.maps.Marker({
 					position: landmark4,
 					title: "car 4",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker4.setMap(map);
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker4, 'click', function() {
+					infowindow.setContent(marker4.title);
+					infowindow.open(map, marker4);
 				});
 				
 				
 				
-				var marker = new google.maps.Marker({
+				var marker5 = new google.maps.Marker({
 					position: landmark5,
 					title: "Car 5",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker5.setMap(map);
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker5, 'click', function() {
+					infowindow.setContent(marker5.title);
+					infowindow.open(map, marker5);
 				});
 				
 				
 				
 
-				var marker = new google.maps.Marker({
+				var marker6 = new google.maps.Marker({
 					position: landmark6,
 					title: "car 6",
 					icon: 'car.png'
 				});
-				marker.setMap(map);
+				marker6.setMap(map);
 				
 				
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+				google.maps.event.addListener(marker6, 'click', function() {
+					infowindow.setContent(marker6.title);
+					infowindow.open(map, marker6);
 				});
 				
 				
