@@ -31,7 +31,7 @@ function init()
 				}
 
 				function printLocation(lat, lng) {
-					var curlatlng = new google.maps.LatLng(lat, lng)
+					var curlatlng = new google.maps.LatLng(lat, lng);
 					
 					var marker = new google.maps.Marker({
 						position: curlatlng ,
@@ -57,7 +57,7 @@ function init()
 						// Step 5: parse the JSON data from response
 						console.log("Here I am 3");
 						if (request.readyState == 4 && request.status == 200) {
-							console.log(request.status)
+							console.log(request.status);
 							var p = JSON.parse(request.responseText);
 							console.log(p[0].lat);
 							console.log(p[0].lng);
