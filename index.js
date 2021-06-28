@@ -59,15 +59,17 @@ function init()
 							console.log(p[0].lat);
 							console.log(p[0].lng);
 							console.log(p[0].username);
+							for (let i = 0; i < p.length; i++) {
+ 								var closest = new google.maps.LatLng(p[i].lat, p[i].lng);
 							
-							var closest = new google.maps.LatLng(p[0].lat, p[0].lng);
-							
-							var marker = new google.maps.Marker({
-								position: closest,
-								title: "closest uber",
-								icon: 'car.png'
-							});
+								var marker = new google.maps.Marker({
+									position: closest,
+									title: "close uber",
+									icon: 'car.png'
+								});
 								marker.setMap(map);
+							}
+							
 						}
 					};
 
