@@ -81,11 +81,12 @@ function init()
 								}
 							}
 							
+							console.log("HEERE" + clsti.toString());
 							
 						}
 					};
 
-					console.log(clsti.toString());
+					
 					request.send(params);
 					console.log(request.responsetext);
 
@@ -184,13 +185,13 @@ function init()
 					icon: 'car.png'
 				});
 				marker6.setMap(map);
-				*/
+				
 				
 				google.maps.event.addListener(marker6, 'click', function() {
 					infowindow.setContent(marker6.title);
 					infowindow.open(map, marker6);
 				});
-				
+				*/
 				
 				
 			}
