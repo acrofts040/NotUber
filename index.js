@@ -93,8 +93,8 @@ function init()
 							
 							//set path coords
 							 const pathCoordinates = [
-							    { lat: curlatlng.lat, lng: curlatlng.lng },
-							    { lat: p[clsti].lat, lng: p[clsti].lng }
+							    { lat: parseFloat(curlatlng.lat), lng: parseFloat(curlatlng.lng) },
+							    { lat: parseFloat(p[clsti].lat), lng: parseFloat(p[clsti].lng) }
 							  ];			
 							
 							//ADD LINE
