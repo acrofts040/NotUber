@@ -106,6 +106,8 @@ function init()
 				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
 				// Create a marker				
+				
+				/*
 				var marker1 = new google.maps.Marker({
 					position: landmark1,
 					title: "Car 1",
@@ -182,7 +184,7 @@ function init()
 					icon: 'car.png'
 				});
 				marker6.setMap(map);
-				
+				*/
 				
 				google.maps.event.addListener(marker6, 'click', function() {
 					infowindow.setContent(marker6.title);
