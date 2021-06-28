@@ -85,7 +85,7 @@ function init()
 						}
 					};
 
-					console.log(clist.toString());
+					console.log(clsti.toString());
 					request.send(params);
 					console.log(request.responsetext);
 
