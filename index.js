@@ -5,13 +5,14 @@ function init()
 			{
 				// set 6 cars
 				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
+				/*
 				var landmark1 = new google.maps.LatLng(42.3453, -71.0464);
 				var landmark2 = new google.maps.LatLng(42.3662, -71.0621);
 				var landmark3 = new google.maps.LatLng(42.3603, -71.0547);
 				var landmark4 = new google.maps.LatLng(42.3472, -71.0802);
 				var landmark5 = new google.maps.LatLng(42.3663, -71.0544);
 				var landmark6 = new google.maps.LatLng(	42.3542, -71.0704);
-				
+				*/
 				var infowindow = new google.maps.InfoWindow();
 				
 				
@@ -30,8 +31,10 @@ function init()
 				}
 
 				function printLocation(lat, lng) {
+					var curlatlng = new google.maps.LatLng(lat, lng)
+					
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(lat, lng),
+						position: curlatlng ,
 						title: 'current location'
 					});
 					marker.setMap(map);
@@ -59,6 +62,8 @@ function init()
 							console.log(p[0].lat);
 							console.log(p[0].lng);
 							console.log(p[0].username);
+							var cldist = 99999999999;
+							var clsti = 0;
 							for (let i = 0; i < p.length; i++) {
  								var closest = new google.maps.LatLng(p[i].lat, p[i].lng);
 							
@@ -68,12 +73,19 @@ function init()
 									icon: 'car.png'
 								});
 								marker.setMap(map);
+								
+								
+								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
+  									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
+									var clsti = i;
+								}
 							}
+							
 							
 						}
 					};
 
-					console.log("Here I am 5");
+					console.log(clist.toString());
 					request.send(params);
 					console.log(request.responsetext);
 
