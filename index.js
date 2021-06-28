@@ -61,7 +61,7 @@ function init()
 								});
 								marker.setMap(map);
 								markers[i] = marker;
-								
+								console.log(closest);
 								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
   									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
 									var clsti = i;
