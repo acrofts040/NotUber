@@ -39,7 +39,7 @@ function init()
 					});
 					marker.setMap(map);
 
-					console.log(lat);
+					//console.log(lat);
 					request = new XMLHttpRequest();
 
 
@@ -49,19 +49,19 @@ function init()
 					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 					var params = "username=PT88yXTq&lat=" +  lat.toString() + "&lng=" + lng.toString();
-					console.log(params);
+				//	console.log(params);
 
 					// Step 3: What to do when we get a response back
-					console.log("Here I am 2");
+				//	console.log("Here I am 2");
 					request.onreadystatechange = function() {
 						// Step 5: parse the JSON data from response
-						console.log("Here I am 3");
+					//	console.log("Here I am 3");
 						if (request.readyState == 4 && request.status == 200) {
 							console.log(request.status);
 							var p = JSON.parse(request.responseText);
-							console.log(p[0].lat);
-							console.log(p[0].lng);
-							console.log(p[0].username);
+						//	console.log(p[0].lat);
+						//	console.log(p[0].lng);
+						//	console.log(p[0].username);
 							var cldist = 99999999999;
 							var clsti = 0;
 							for (let i = 0; i < p.length; i++) {
@@ -81,14 +81,33 @@ function init()
 								}
 							}
 							
-							console.log("HEERE" + clsti.toString());
+						//	console.log("HEERE" + clsti.toString());
 							
+							
+							
+							//ATTEMPT TO ADD LINE
+							
+							//set path coords
+							 const pathCoordinates = [
+							    { lat: curlatlng.lat, lng: curlatlng.lng },
+							    { lat: p[clsti].lat, lng: p[clsti].lng }
+							  ];			
+							
+							//ADD LINE
+							const carPath = new google.maps.Polyline({
+   								path: pathCoordinates,
+    								geodesic: true,
+    								strokeColor: "#FF0000",
+								strokeOpacity: 1.0,
+							 	strokeWeight: 2,
+							});
+							carPath.setMap(map);
 						}
 					};
 
 					
 					request.send(params);
-					console.log(request.responsetext);
+					//console.log(request.responsetext);
 
 				}	
 				
