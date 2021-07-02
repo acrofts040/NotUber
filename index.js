@@ -42,7 +42,7 @@ function init()
 						// Step 5: parse the JSON data from response
 					//	console.log("Here I am 3");
 						if (request.readyState == 4 && request.status == 200) {
-							console.log(request.status);
+							console.log("here");
 							var p = JSON.parse(request.responseText);
 						//	console.log(p[0].lat);
 						//	console.log(p[0].lng);
