@@ -51,6 +51,7 @@ function init()
 							var clsti = 0;
 							var markers = []; 
 							for (let i = 0; i < p.length; i++) {
+								console.log(p[i].lng);
  								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 								
 							
