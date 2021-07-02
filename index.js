@@ -35,7 +35,8 @@ function init()
 
 					var params = "username=PT88yXTq&lat=" +  lat.toString() + "&lng=" + lng.toString();
 				//	console.log(params);
-
+					lat = parseFloat(lat);
+					lng = parseFloat(lng);
 					// Step 3: What to do when we get a response back
 				//	console.log("Here I am 2");
 					request.onreadystatechange = function() {
