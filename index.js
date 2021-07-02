@@ -68,7 +68,7 @@ function init()
 								}
 							}
 							
-						//	console.log("HEERE" + clsti.toString());
+							console.log("HEERE" + clsti.toString());
 							
 							
 							//Add description of closest marker
