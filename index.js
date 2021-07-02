@@ -29,7 +29,7 @@ function init()
 
 
 					// Step 2: Make request to the JSON source
-					request.open("POST", "https://jordan-marsh.herokuapp.com/rides", true);
+					request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides", true);
 
 					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
