@@ -13,7 +13,7 @@ function init()
 						lng = somePos.coords.longitude;
 						console.log("NUMBA" + lat);
 						console.log("NUMBA" + lng);
-						printLocation(parseFloat(lat),ParseFloat(lng));
+						printLocation(parseFloat(lat),parseFloat(lng));
 					});
 				}
 				function printLocation(lat, lng) {
