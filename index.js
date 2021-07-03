@@ -19,6 +19,7 @@ function init()
 				function printLocation(lat, lng) {
 					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 					
+					
 					var marker = new google.maps.Marker({
 						position: curlatlng ,
 						title: 'current location'
@@ -58,7 +59,7 @@ function init()
 								console.log(p[i].lng);
  								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 								
-								console.log("CLO" + closest); 
+								//console.log("CLO" + closest); 
 							
 								var marker = new google.maps.Marker({
 									position: closest,
