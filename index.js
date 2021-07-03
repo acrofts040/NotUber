@@ -97,7 +97,7 @@ function init()
 							
 							
 							//ATTEMPT TO ADD LINE
-							/*
+							
 							//set path coords
 							 const pathCoordinates = [
 							    { lat: parseFloat(curlatlng.lat), lng: parseFloat(curlatlng.lng) },
@@ -114,7 +114,7 @@ function init()
 							});
 							carPath.setMap(map);
 							
-							*/
+							
 						}
 					};
 
