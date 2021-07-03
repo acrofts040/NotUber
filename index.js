@@ -11,7 +11,9 @@ function init()
 					navigator.geolocation.getCurrentPosition(function(somePos) {
 						lat = somePos.coords.latitude;
 						lng = somePos.coords.longitude;
-						printLocation(lat,lng);
+						console.log(lat);
+						console.log(lng);
+						printLocation(parseFloat(lat),ParseFloat(lng));
 					});
 				}
 				function printLocation(lat, lng) {
