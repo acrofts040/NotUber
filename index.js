@@ -14,9 +14,8 @@ function init()
 						printLocation(lat,lng);
 					});
 				}
-
 				function printLocation(lat, lng) {
-					var curlatlng = new google.maps.LatLng(lat, lng);
+					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 					
 					var marker = new google.maps.Marker({
 						position: curlatlng ,
@@ -24,7 +23,7 @@ function init()
 					});
 					marker.setMap(map);
 
-					//console.log(lat);
+					console.log("LAT" + lat);
 					request = new XMLHttpRequest();
 
 
@@ -55,6 +54,7 @@ function init()
 								console.log(p[i].lng);
  								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 								
+								console.log("CLO" + closest); 
 							
 								var marker = new google.maps.Marker({
 									position: closest,
