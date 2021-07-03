@@ -76,7 +76,7 @@ function init()
 							}
 							
 							console.log("HEERE" + clsti.toString());
-							
+							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
 							//Add description of closest marker
 							var titlestring = "Closest vehicle: " + p[clsti].username.toString() + " at distance of " + cldist.toString(); 
@@ -100,8 +100,8 @@ function init()
 							
 							//set path coords
 							 const pathCoordinates = [
-							    { lat: parseFloat(curlatlng.lat), lng: parseFloat(curlatlng.lng) },
-							    { lat: parseFloat(p[clsti].lat), lng: parseFloat(p[clsti].lng) }
+							    { curlatlng},
+							    { closestr }
 							  ];			
 							
 							//ADD LINE
