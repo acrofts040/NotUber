@@ -102,7 +102,12 @@ function init()
 							 const pathCoordinates = [
 							    { curlatlng},
 							    { closestr }
-							  ];			
+							  ];	
+							
+							var lineCoordinates = [
+     								new google.maps.LatLng(lat, lng),
+	     							new google.maps.LatLng(p[clsti].lat, p[clsti].lng)
+							];
 							
 							//ADD LINE
 							const carPath = new google.maps.Polyline({
