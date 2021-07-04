@@ -111,7 +111,7 @@ function init()
 							
 							//ADD LINE
 							const carPath = new google.maps.Polyline({
-   								path: pathCoordinates,
+   								path: lineCoordinates,
     								geodesic: true,
     								strokeColor: "#FF0000",
 								strokeOpacity: 1.0,
