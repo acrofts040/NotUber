@@ -36,20 +36,15 @@ function init()
 					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 					var params = "username=PT88yXTq&lat=" +  lat.toString() + "&lng=" + lng.toString();
-				//	console.log(params);
+					
 					lat = parseFloat(lat);
 					lng = parseFloat(lng);
 					// Step 3: What to do when we get a response back
-				//	console.log("Here I am 2");
 					request.onreadystatechange = function() {
 						// Step 5: parse the JSON data from response
-					//	console.log("Here I am 3");
 						if (request.readyState == 4 && request.status == 200) {
 							console.log("here");
 							var p = JSON.parse(request.responseText);
-						//	console.log(p[0].lat);
-						//	console.log(p[0].lng);
-						//	console.log(p[0].username);
 							var cldist = 99999999999;
 							var clsti = 0;
 							var markers = []; 
@@ -58,8 +53,6 @@ function init()
 							for (let i = 0; i < p.length; i++) {
 								console.log(p[i].lng);
  								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
-								
-								//console.log("CLO" + closest); 
 							
 								var marker = new google.maps.Marker({
 									position: closest,
@@ -125,8 +118,6 @@ function init()
 
 					
 					request.send(params);
-					//console.log(request.responsetext);
-
 				}	
 				
 				getLocation();
