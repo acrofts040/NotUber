@@ -17,7 +17,7 @@ function init()
 					});
 				}
 				function printLocation(lat, lng) {
-					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+					curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 					
 					/*
 					var marker = new google.maps.Marker({
