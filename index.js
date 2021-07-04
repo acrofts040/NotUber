@@ -48,7 +48,6 @@ function init()
 							var cldist = 99999999999;
 							var clsti = 0;
 							var markers = []; 
-							var close = []; 
 							
 							for (let i = 0; i < p.length; i++) {
 								console.log(p[i].lng);
@@ -62,17 +61,16 @@ function init()
 								marker.setMap(map);
 								markers[i] = marker;
 								console.log(closest);
-								close.push(google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest));
+
 								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
   									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
 									var clsti = i;
 								}
 							}
-							
-							console.log(close);
-							console.log("clsti: " + clsti);
+
 							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
+							cldist = cldist * 0.00062137;
 							//Add description of closest marker
 							var titlestring = "Closest vehicle: " + p[clsti].username.toString() + " at distance of " + cldist.toString(); 
 							
@@ -91,14 +89,9 @@ function init()
 				
 							
 							
-							//ATTEMPT TO ADD LINE
+							//ADD LINE
 							
-							//set path coords
-							 const pathCoordinates = [
-							    { curlatlng},
-							    { closestr }
-							  ];	
-							
+							//set path coord
 							var lineCoordinates = [
      								new google.maps.LatLng(lat, lng),
 	     							new google.maps.LatLng(p[clsti].lat, p[clsti].lng)
