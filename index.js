@@ -14,6 +14,11 @@ function init()
 					navigator.geolocation.getCurrentPosition(function(somePos) {
 						lat = somePos.coords.latitude;
 						lng = somePos.coords.longitude;
+						
+						var map = new google.maps.Map(document.getElementById("map_canvas"),  {
+  							center: new google.maps.LatLng(parseFloat(lat), parseFloat(lng)),
+  							zoom: 1},
+							myOptions);	
 						console.log(typeof lat);
 						console.log(typeof lng);
 						printLocation(parseFloat(lat),parseFloat(lng));
