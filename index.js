@@ -124,7 +124,7 @@ function init()
 				// Set up map with marker at 
 				var myOptions = {
 					zoom: 3, // The larger the zoom number, the bigger the zoom
-					center: curlatlng,
+					center: landmark0,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};
 				
