@@ -6,7 +6,7 @@ function init()
 				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
 				var lat = -99999;
-				var lng = -99999;
+				var lng = 99999;
 				function getLocation() {
 					navigator.geolocation.getCurrentPosition(function(somePos) {
 						lat = somePos.coords.latitude;
