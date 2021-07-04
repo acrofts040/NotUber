@@ -11,8 +11,8 @@ function init()
 					navigator.geolocation.getCurrentPosition(function(somePos) {
 						lat = somePos.coords.latitude;
 						lng = somePos.coords.longitude;	
-						console.log(typeof lat);
-						console.log(typeof lng);
+						//console.log(typeof lat);
+						//console.log(typeof lng);
 						printLocation(parseFloat(lat),parseFloat(lng));
 					});
 				}
@@ -28,7 +28,7 @@ function init()
 					
 					*/
 
-					console.log("LAT" + lat);
+					//console.log("LAT" + lat);
 					request = new XMLHttpRequest();
 
 
@@ -45,14 +45,14 @@ function init()
 					request.onreadystatechange = function() {
 						// Step 5: parse the JSON data from response
 						if (request.readyState == 4 && request.status == 200) {
-							console.log("here");
+							//console.log("here");
 							var p = JSON.parse(request.responseText);
 							var cldist = 99999999999;
 							var clsti = 0;
 							var markers = []; 
 							
 							for (let i = 0; i < p.length; i++) {
-								console.log(p[i].lng);
+								//console.log(p[i].lng);
  								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 							
 								var marker = new google.maps.Marker({
@@ -62,7 +62,7 @@ function init()
 								});
 								marker.setMap(map);
 								markers[i] = marker;
-								console.log(closest);
+								//console.log(closest);
 
 								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
   									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
