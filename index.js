@@ -3,7 +3,10 @@ function init()
 			{
 				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
 				var infowindow = new google.maps.InfoWindow();
-				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				var map = new google.maps.Map(document.getElementById("map_canvas"),  {
+  					center: {lat: -34.397, lng: 150.644},
+  					zoom: 1},
+					myOptions);
 				
 				var lat = -99999;
 				var lng = 99999;
