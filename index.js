@@ -19,12 +19,14 @@ function init()
 				function printLocation(lat, lng) {
 					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 					
-					
+					/*
 					var marker = new google.maps.Marker({
 						position: curlatlng ,
 						title: 'current location'
 					});
 					marker.setMap(map);
+					
+					*/
 
 					console.log("LAT" + lat);
 					request = new XMLHttpRequest();
@@ -80,7 +82,7 @@ function init()
 								position: curlatlng ,
 								title: titlestring
 							});
-							
+							marker.setMap(map);
 							//add listener
 							google.maps.event.addListener(marker, 'click', function() {
 								infowindow.setContent(marker.title);
