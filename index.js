@@ -74,7 +74,7 @@ function init()
 							
 							cldist = cldist * 0.00062137;
 							//Add description of closest marker
-							var titlestring = "Closest vehicle: " + p[clsti].username.toString() + " at distance of " + cldist.toString(); 
+							var titlestring = "Closest vehicle: " + p[clsti].username.toString() + ", at a distance of " + cldist.toString() + " miles"; 
 							
 							
 							// Add current location marker with description
