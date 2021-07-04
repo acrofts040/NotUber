@@ -1,7 +1,7 @@
 function init()
 			
 			{
-				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
+				var landmark0 = new google.maps.LatLng(40.867, -73.38);
 				var infowindow = new google.maps.InfoWindow();
 				//var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
 				
@@ -17,7 +17,7 @@ function init()
 					});
 				}
 				function printLocation(lat, lng) {
-					curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
 					
 					/*
 					var marker = new google.maps.Marker({
