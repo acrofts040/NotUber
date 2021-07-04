@@ -48,7 +48,7 @@ function init()
 							var cldist = 99999999999;
 							var clsti = 0;
 							var markers = []; 
-						
+							var close = []; 
 							
 							for (let i = 0; i < p.length; i++) {
 								console.log(p[i].lng);
@@ -62,13 +62,15 @@ function init()
 								marker.setMap(map);
 								markers[i] = marker;
 								console.log(closest);
+								close.push(google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest));
 								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
   									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
 									var clsti = i;
 								}
 							}
 							
-							console.log("HEERE" + clsti.toString());
+							console.log(close);
+							console.log("clsti: " + clsti);
 							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
 							//Add description of closest marker
