@@ -3,22 +3,14 @@ function init()
 			{
 				var landmark0 = new google.maps.LatLng(42.352271, -71.05524200000001);
 				var infowindow = new google.maps.InfoWindow();
-				var map = new google.maps.Map(document.getElementById("map_canvas"),  {
-  					center: {lat: -34.397, lng: 150.644},
-  					zoom: 1},
-					myOptions);
+				var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
 				
 				var lat = -99999;
 				var lng = 99999;
 				function getLocation() {
 					navigator.geolocation.getCurrentPosition(function(somePos) {
 						lat = somePos.coords.latitude;
-						lng = somePos.coords.longitude;
-						
-						var map = new google.maps.Map(document.getElementById("map_canvas"),  {
-  							center: new google.maps.LatLng(parseFloat(lat), parseFloat(lng)),
-  							zoom: 1},
-							myOptions);	
+						lng = somePos.coords.longitude;	
 						console.log(typeof lat);
 						console.log(typeof lng);
 						printLocation(parseFloat(lat),parseFloat(lng));
