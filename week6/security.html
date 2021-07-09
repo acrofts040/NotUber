@@ -6,7 +6,21 @@
 	<title> Andrew Crofts Lab 13 </title>
 </head>
 <body>
-    <h6> Vuln 1:
-    </h6>
+	<ol>
+ 		<li>The Jordan Marsh App is a site that coordinates and processes requests for rides from ride sharing services. We have been hired to do penetration testing and ensure the security of the site for use of ride sharing apps. </li>
+  		<li>To test the system we used the command line, as well as some use of burp suite and a simple browser to ensure the validity of our exploits.</li>
+  		<li>there are many issues present within the system, the glaring issue is within the lack of sanitization of user input when submitting a request.</li>
+	</ol>
+	
+	
+    <h6> Vuln 1: </h6>
+	<ul>
+  		<li>Lack of sanitization of input for parameters user,lat and lng. </li>
+  		<li>This issue exists within the /rides post request system</li>
+  		<li>High severity</li>
+		<li>This lack of sanitization of inputs leaves the system vulnerable to cross site scripting attacks as well as SQL injection. Strings with the script tag attached can be inserted and executed.  </li>
+		<li>The following command produces the following alert to pop up for all users on the website: </li>
+		<img src="pic1.jpg">
+	</ul>
 </body>
 </html>
