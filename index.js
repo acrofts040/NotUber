@@ -122,7 +122,7 @@ function init()
 				
 				// Set up map with marker at 
 				var myOptions = {
-					zoom: 7, 
+					zoom: 10, 
 					center: landmark0,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};
