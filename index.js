@@ -120,7 +120,6 @@ function init()
 				getLocation();
 				
 				
-				
 				// Set up map with marker at 
 				var myOptions = {
 					zoom: 7, 
