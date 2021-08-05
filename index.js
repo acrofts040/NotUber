@@ -70,7 +70,7 @@ function init()
 								var rbody = JSON.parse(JSON.stringify(xhr.response));
 								
   
-								if ( !(rbody["status"] == 'ZERO_RESULTS') && !(rbody["results"][0]["types"].includes("natural_feature")) ){
+								if ( !(rbody["status"] == 'ZERO_RESULTS') && !(rbody["results"][0]["types"].includes("natural_feature"))  && !(rbody["results"][0]["address_components"][0]["long_name"] == "Unnamed Road")){
 								
 									var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 
