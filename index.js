@@ -53,22 +53,43 @@ function init()
 							
 							for (let i = 0; i < p.length; i++) {
 								
- 								var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
-							
-								var marker = new google.maps.Marker({
-									position: closest,
-									title: "close uber",
-									icon: 'car.png'
-								});
-								marker.setMap(map);
-								markers[i] = marker;
-								//console.log(closest);
+								let xhr = new XMLHttpRequest();
+								
+								
+								var getstring = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + parseFloat(p[i].lat).toString() + ',' + parseFloat(p[i].lng).toString() + '&key=AIzaSyDz1zUsHFx77Q82Zaf_pM0d3TlUDloImmU';     
+								xhr.open('GET', getstring);
 
-								if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
-  									var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
-									var clsti = i;
+								xhr.responseType = 'json';
+
+								xhr.send();
+
+								// the response is {"message": "Hello, world!"}
+								xhr.onload = function() {
+								let responseObj = xhr.response;
+
+								var rbody = JSON.parse(JSON.stringify(xhr.response));
+								};
+  
+								if ( !(rbody["status"] == 'ZERO_RESULTS') && !(rbody["results"][0]["types"].includes("natural_feature")) ){
+								
+									var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
+
+									var marker = new google.maps.Marker({
+										position: closest,
+										title: "close uber",
+										icon: 'car.png'
+									});
+									marker.setMap(map);
+									markers[i] = marker;
+									//console.log(closest);
+
+									if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
+										var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
+										var clsti = i;
 								}
+									
 							}
+						}
 
 							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
