@@ -55,9 +55,9 @@ function init()
 								
 								let xhr = new XMLHttpRequest();
 								
+								var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(p[i].lat).toString() + ',' + parseFloat(p[i].lng).toString() + '?access_token=DiidmAH8hDQbvYzXFXrU';    
 								
-								
-								xhr.open('GET', 'https://api.onwater.io/api/v1/results/41.9546605,-73.4720944?access_token=DiidmAH8hDQbvYzXFXrU');
+								xhr.open('GET', getstring);
 
 								xhr.responseType = 'json';
 
