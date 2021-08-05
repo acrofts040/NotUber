@@ -56,8 +56,8 @@ function init()
 								let xhr = new XMLHttpRequest();
 								
 								
-								var getstring = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + parseFloat(p[i].lat).toString() + ',' + parseFloat(p[i].lng).toString() + '&key=AIzaSyDz1zUsHFx77Q82Zaf_pM0d3TlUDloImmU';     
-								xhr.open('GET', getstring);
+								
+								xhr.open('GET', 'https://api.onwater.io/api/v1/results/41.9546605,-73.4720944?access_token=DiidmAH8hDQbvYzXFXrU');
 
 								xhr.responseType = 'json';
 
@@ -67,10 +67,10 @@ function init()
 								xhr.onload = function() {
 								let responseObj = xhr.response;
 
-								var rbody = JSON.parse(JSON.stringify(xhr.response));
+								console.log(responseObj.water);
 								
   
-								if ( !(rbody["status"] == 'ZERO_RESULTS') && !(rbody["results"][0]["types"].includes("natural_feature"))  && !(rbody["results"][0]["address_components"][0]["long_name"] == "Unnamed Road")){
+								if (!responseObj.water){
 								
 									var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
 
