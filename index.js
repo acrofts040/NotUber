@@ -68,7 +68,7 @@ function init()
 								let responseObj = xhr.response;
 
 								var rbody = JSON.parse(JSON.stringify(xhr.response));
-								};
+								
   
 								if ( !(rbody["status"] == 'ZERO_RESULTS') && !(rbody["results"][0]["types"].includes("natural_feature")) ){
 								
@@ -86,7 +86,10 @@ function init()
 									if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
 										var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
 										var clsti = i;
+									}
+									
 								}
+								};
 									
 							}
 						}
