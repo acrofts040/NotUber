@@ -85,6 +85,8 @@ function init()
 
 									if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
 										var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
+										console.log("Closest : ");
+										console.log(cldist);
 										var clsti = i;
 									}
 									
