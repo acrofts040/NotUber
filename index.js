@@ -92,7 +92,7 @@ function init()
 								};
 									
 							}
-						}
+						
 
 							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
