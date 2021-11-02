@@ -9,7 +9,7 @@ Upon completion, this service should be able to obtain the client's location and
 
 - Node.js
 - Express.js
-- PostgreSQL
+- MongoDB
 - Heroku
 - Google Cloud APIs
 - OnWater API
