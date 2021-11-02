@@ -1,6 +1,6 @@
 # Overview
 
-Repo for my Uber mimic "NotUber"
+Repo for my rudimentary Uber mimic "NotUber"
 
 Upon completion, this service should be able to obtain the client's location and show nearby cars to take them to their desired location
 
