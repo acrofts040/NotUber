@@ -136,6 +136,9 @@ function init()
 							carPath.setMap(map);
 							
 							
+							console.log("PATH")
+							console.log(carPath);
+							
 						}
 					};
 
