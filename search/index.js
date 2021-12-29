@@ -82,9 +82,10 @@ function init()
 									marker.setMap(map);
 									markers[i] = marker;
 									//console.log(closest);
-
-									if (google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest) < cldist) {
-										var cldist = google.maps.geometry.spherical.computeDistanceBetween(curlatlng, closest);
+                      							
+									//NEW CHANGE
+									if (p[i].dist < cldist) {
+										var cldist = p[i].dist;
 										console.log("Closest : ");
 										console.log(cldist);
 										var clsti = i;
@@ -136,9 +137,6 @@ function init()
 							carPath.setMap(map);
 							
 							
-							console.log("PATH")
-							console.log(carPath);
-							
 						}
 					};
 
@@ -161,3 +159,4 @@ function init()
 
 				
 			}
+		
