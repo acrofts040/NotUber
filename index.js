@@ -82,7 +82,8 @@ function init()
 									marker.setMap(map);
 									markers[i] = marker;
 									//console.log(closest);
-                      
+                      							
+									//NEW CHANGE
 									if (p[i].dist < cldist) {
 										var cldist = p[i].dist;
 										console.log("Closest : ");
