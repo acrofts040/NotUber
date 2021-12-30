@@ -87,6 +87,7 @@ function init()
                   							console.log("DIST")
                   							console.log(p[i].dist, i)
 									if (p[i].dist < cldist) {
+										console.log("IN")
 										var cldist = p[i].dist;
 										console.log("Closest : ");
 										console.log(cldist);
