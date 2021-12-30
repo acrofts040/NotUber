@@ -1,1 +1,164 @@
-function init(){var e=new google.maps.LatLng(40.867,-73.38),t=new google.maps.InfoWindow,o=-99999,a=99999;navigator.geolocation.getCurrentPosition(function(e){o=e.coords.latitude,a=e.coords.longitude,function(e,o){var a=new google.maps.LatLng(parseFloat(e),parseFloat(o));request=new XMLHttpRequest,request.open("POST","https://bagged-inukshuk-96259.herokuapp.com/rides",!0),request.setRequestHeader("Content-type","application/x-www-form-urlencoded");var n="username=PT88yXTq&lat="+e.toString()+"&lng="+o.toString();e=parseFloat(e),o=parseFloat(o),request.onreadystatechange=function(){if(4==request.readyState&&200==request.status){var n=JSON.parse(request.responseText),r=99999999999,l=[];for(let e=0;e<n.length;e++){let t=new XMLHttpRequest;var g="https://api.onwater.io/api/v1/results/"+parseFloat(n[e].lat).toString()+","+parseFloat(n[e].lng).toString()+"?access_token=DiidmAH8hDQbvYzXFXrU";t.open("GET",g),t.responseType="json",t.send(),t.onload=function(){let o=t.response;if(console.log(o.water),!o.water){var a=new google.maps.LatLng(parseFloat(n[e].lat),parseFloat(n[e].lng)),r=new google.maps.Marker({position:a,title:"close uber",icon:"car.png"});if(r.setMap(s),l[e]=r,n[e].dist<g){var g=n[e].dist;console.log("Closest : "),console.log(g)}}}}new google.maps.LatLng(parseFloat(n[0].lat),parseFloat(n[0].lng)),r*=62137e-8;var p="Closest vehicle: "+n[0].username.toString()+", at a distance of "+r.toString()+" miles",i=new google.maps.Marker({position:a,title:p});i.setMap(s),google.maps.event.addListener(i,"click",function(){t.setContent(i.title),t.open(s,i)});var c=[new google.maps.LatLng(e,o),new google.maps.LatLng(n[0].lat,n[0].lng)];const u=new google.maps.Polyline({path:c,geodesic:!0,strokeColor:"#FF0000",strokeOpacity:1,strokeWeight:2});u.setMap(s)}},request.send(n)}(parseFloat(o),parseFloat(a))});var n={zoom:10,center:e,mapTypeId:google.maps.MapTypeId.ROADMAP},s=new google.maps.Map(document.getElementById("map_canvas"),n)}
+function init()
+			
+			{
+				var landmark0 = new google.maps.LatLng(40.867, -73.38);
+				var infowindow = new google.maps.InfoWindow();
+				//var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+				
+				var lat = -99999;
+				var lng = 99999;
+				function getLocation() {
+					navigator.geolocation.getCurrentPosition(function(somePos) {
+						lat = somePos.coords.latitude;
+						lng = somePos.coords.longitude;	
+						//console.log(typeof lat);
+						//console.log(typeof lng);
+						printLocation(parseFloat(lat),parseFloat(lng));
+					});
+				}
+				function printLocation(lat, lng) {
+					var curlatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+					
+					/*
+					var marker = new google.maps.Marker({
+						position: curlatlng ,
+						title: 'current location'
+					});
+					marker.setMap(map);
+					
+					*/
+
+					//console.log("LAT" + lat);
+					request = new XMLHttpRequest();
+
+
+					// Step 2: Make request to the JSON source
+					request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides", true);
+
+					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+					var params = "username=PT88yXTq&lat=" +  lat.toString() + "&lng=" + lng.toString();
+					
+					lat = parseFloat(lat);
+					lng = parseFloat(lng);
+					// Step 3: What to do when we get a response back
+					request.onreadystatechange = function() {
+						// Step 5: parse the JSON data from response
+						if (request.readyState == 4 && request.status == 200) {
+							//console.log("here");
+							var p = JSON.parse(request.responseText);
+							var cldist = 99999999999;
+							var clsti = 0;
+							var markers = []; 
+							
+							for (let i = 0; i < p.length; i++) {
+								
+								let xhr = new XMLHttpRequest();
+								
+								var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(p[i].lat).toString() + ',' + parseFloat(p[i].lng).toString() + '?access_token=DiidmAH8hDQbvYzXFXrU';    
+								
+								xhr.open('GET', getstring);
+
+								xhr.responseType = 'json';
+
+								xhr.send();
+
+								// the response is {"message": "Hello, world!"}
+								xhr.onload = function() {
+								let responseObj = xhr.response;
+
+								console.log(responseObj.water);
+								
+  
+								if (!responseObj.water){
+								
+									var closest = new google.maps.LatLng(parseFloat(p[i].lat), parseFloat(p[i].lng));
+
+									var marker = new google.maps.Marker({
+										position: closest,
+										title: "close uber",
+										icon: 'car.png'
+									});
+									marker.setMap(map);
+									markers[i] = marker;
+									//console.log(closest);
+                      							
+									//NEW CHANGE
+                  console.log("DIST")
+                  console.log(p[i].dist)
+									if (p[i].dist < cldist) {
+										var cldist = p[i].dist;
+										console.log("Closest : ");
+										console.log(cldist);
+										var clsti = i;
+									}
+									
+								}
+								};
+									
+							}
+						
+
+							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
+							
+							cldist = cldist * 0.00062137;
+							//Add description of closest marker
+							var titlestring = "Closest vehicle: " + p[clsti].username.toString() + ", at a distance of " + cldist.toString() + " miles"; 
+							
+							
+							// Add current location marker with description
+							var marker = new google.maps.Marker({
+								position: curlatlng ,
+								title: titlestring
+							});
+							marker.setMap(map);
+							//add listener
+							google.maps.event.addListener(marker, 'click', function() {
+								infowindow.setContent(marker.title);
+								infowindow.open(map, marker);
+							});
+				
+							
+							
+							//ADD LINE
+							
+							//set path coord
+							var lineCoordinates = [
+     								new google.maps.LatLng(lat, lng),
+	     							new google.maps.LatLng(p[clsti].lat, p[clsti].lng)
+							];
+							
+							//ADD LINE
+							const carPath = new google.maps.Polyline({
+   								path: lineCoordinates,
+    								geodesic: true,
+    								strokeColor: "#FF0000",
+								strokeOpacity: 1.0,
+							 	strokeWeight: 2,
+							});
+							carPath.setMap(map);
+							
+							
+						}
+					};
+
+					
+					request.send(params);
+				}	
+				
+				getLocation();
+				
+				
+				// Set up map with marker at 
+				var myOptions = {
+					zoom: 10, 
+					center: landmark0,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				// Create the map in the "map_canvas" <div>
+				var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+				
+			}
+		
