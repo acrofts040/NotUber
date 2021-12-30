@@ -84,8 +84,8 @@ function init()
 									//console.log(closest);
                       							
 									//NEW CHANGE
-                  console.log("DIST")
-                  console.log(p[i].dist)
+                  							console.log("DIST")
+                  							console.log(p[i].dist, i)
 									if (p[i].dist < cldist) {
 										var cldist = p[i].dist;
 										console.log("Closest : ");
@@ -97,8 +97,9 @@ function init()
 								};
 									
 							}
-						
-
+							console.log("FINAL")
+							console.log(clsti, cldist)
+							
 							var closestr = new google.maps.LatLng(parseFloat(p[clsti].lat), parseFloat(p[clsti].lng));
 							
 							cldist = cldist * 0.00062137;
