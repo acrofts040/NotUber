@@ -30,6 +30,9 @@ function getMyLocation() {
 			});
 			map.panTo(me);
 			var request = new XMLHttpRequest();
+			
+			//FIRST CHANGE URL
+			
 			request.open("POST", "https://hans-moleman.herokuapp.com/rides");
 			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			request.onreadystatechange = function() {
@@ -69,6 +72,7 @@ function getMyLocation() {
 					closestLine.setMap(map);
 				}
 			}
+			//CHANGE 2: CHANGE PARAMS
 			request.send("username=weinermobile&lat=" + myLat + "&lng=" + myLng);
 		});
 	}
