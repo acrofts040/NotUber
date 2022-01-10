@@ -1,5 +1,5 @@
 
-function init2()
+function init()
 {
 	var myLat = 42.352271;
 	var myLng = -71.05524200000001;
