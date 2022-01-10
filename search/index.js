@@ -79,6 +79,8 @@ function init()
 				//CHANGE 2: CHANGE PARAMS
 				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
 			});
+			
+			console.log("Ran");
 		}
 		else {
 			alert("Geolocation is not supported by your web browser.  What a shame!");
