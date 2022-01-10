@@ -86,4 +86,8 @@ function init()
 			alert("Geolocation is not supported by your web browser.  What a shame!");
 		}
 	}
+	
+	//call functions
+	initMap();
+	getMyLocation(); 
 }
