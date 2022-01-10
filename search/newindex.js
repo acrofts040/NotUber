@@ -36,7 +36,8 @@ function init2()
 
 				//FIRST CHANGE URL
 
-				request.open("POST", "https://hans-moleman.herokuapp.com/rides");
+				//request.open("POST", "https://hans-moleman.herokuapp.com/rides");
+				request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides");
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				request.onreadystatechange = function() {
 					if (request.status == 200 && request.readyState == 4) {
@@ -76,7 +77,7 @@ function init2()
 					}
 				}
 				//CHANGE 2: CHANGE PARAMS
-				request.send("username=weinermobile&lat=" + myLat + "&lng=" + myLng);
+				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
 			});
 		}
 		else {
