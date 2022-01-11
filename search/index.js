@@ -71,6 +71,7 @@ function init()
 						
 						
 						//DIRECTIONS ATTEMPT 1
+						/*
 						function Directions() {
 							  var directionsService = new google.maps.DirectionsService();
 							  var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -93,7 +94,7 @@ function init()
 							    }
 							  });
 							}
-						/*
+						*/
 						closestLine = new google.maps.Polyline({
 							path: [me, closestVehicle],
 							geodesic: true,
@@ -102,9 +103,9 @@ function init()
 							strokeWeight: 10
 						});
 						closestLine.setMap(map);
-						*/
+						
 						console.log("calling directions");
-						Directions();
+						//Directions();
 						console.log("done");
 					}
 				}
