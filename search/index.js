@@ -67,6 +67,34 @@ function init()
 							infowindow.setContent("Closest vehicle is " + closestDistance * 0.000621371 + " mi away!");
 							infowindow.open(map, meMarker);
 						});
+						
+						
+						
+						//DIRECTIONS ATTEMPT 1
+						function Directions() {
+							  var directionsService = new google.maps.DirectionsService();
+							  var directionsRenderer = new google.maps.DirectionsRenderer();
+							  var start = closestVehicle;
+							  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+							  directionsRenderer.setMap(map);
+							}
+
+							function calcRoute() {
+							  var start = start;
+							  var end = me;
+							console.log("calcing route");
+							  var request = {
+							    origin: start,
+							    destination: end,
+							    travelMode: 'DRIVING'
+							  };
+							  directionsService.route(request, function(result, status) {
+							    if (status == 'OK') {
+							      directionsRenderer.setDirections(result);
+							    }
+							  });
+							}
+						/*
 						closestLine = new google.maps.Polyline({
 							path: [me, closestVehicle],
 							geodesic: true,
@@ -75,6 +103,7 @@ function init()
 							strokeWeight: 10
 						});
 						closestLine.setMap(map);
+						*/
 					}
 				}
 				//CHANGE 2: CHANGE PARAMS
