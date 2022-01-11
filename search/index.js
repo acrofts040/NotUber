@@ -6,7 +6,7 @@ function init()
 	var me = new google.maps.LatLng(myLat, myLng);
 	var meMarker = {};
 	var myOptions = {
-		zoom: 13,
+		zoom: 5,
 		center: me,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
@@ -32,6 +32,7 @@ function init()
 					map: map
 				});
 				map.panTo(me);
+				map.setZoom(13);
 				var request = new XMLHttpRequest();
 
 				//FIRST CHANGE URL
