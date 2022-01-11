@@ -79,7 +79,7 @@ function init()
 				//CHANGE 2: CHANGE PARAMS
 				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
 			});
-			
+
 			console.log("Ran");
 		}
 		else {
@@ -89,5 +89,4 @@ function init()
 	
 	//call functions
 	initMap();
-	getMyLocation(); 
 }
