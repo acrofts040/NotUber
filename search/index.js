@@ -75,7 +75,6 @@ function init()
 							  var directionsService = new google.maps.DirectionsService();
 							  var directionsRenderer = new google.maps.DirectionsRenderer();
 							  var start = closestVehicle;
-							  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 							  directionsRenderer.setMap(map);
 							}
 
@@ -104,6 +103,9 @@ function init()
 						});
 						closestLine.setMap(map);
 						*/
+						console.log("calling directions");
+						Directions();
+						console.log("done");
 					}
 				}
 				//CHANGE 2: CHANGE PARAMS
