@@ -52,6 +52,12 @@ p {
   border-radius: 10px;
 }
 
+.main {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: white; 
+}
 
 #Find {
   background-color: #000000;
