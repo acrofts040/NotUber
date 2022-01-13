@@ -34,7 +34,8 @@ function init()
 				map.panTo(me);
 				//map.setZoom(13);
 				//attempt to zoom in smoothly
-				smoothZoom(map, 13, 5);
+				//smoothZoom(map, 13, 5);
+				animateMapZoomTo(map, 13);
 				
 				var request = new XMLHttpRequest();
 
