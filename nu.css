@@ -63,8 +63,8 @@ p {
   position: relative;
   text-align: center;
   color: white; 
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0px !important; 
+  margin-left: 0px !important;
 }
 
 #Find {
