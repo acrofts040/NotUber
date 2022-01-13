@@ -1,20 +1,4 @@
 
-
-function smoothZoom (map, max, cnt) {
-    if (cnt >= max) {
-        return;
-    }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            smoothZoom(map, max, cnt + 1);
-        });
-        setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
-    }
-} 
-
-
-
 function init()
 {
 	var myLat = 42.352271;
@@ -48,11 +32,10 @@ function init()
 					map: map
 				});
 				map.panTo(me);
-				//map.setZoom(13);
-				//attempt to zoom in smoothly
-				smoothZoom(map, 13, 5);
-				//animateMapZoomTo(map, 13);
 				
+				map.setZoom(13);
+
+	
 				var request = new XMLHttpRequest();
 
 				//FIRST CHANGE URL
