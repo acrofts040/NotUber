@@ -32,7 +32,10 @@ function init()
 					map: map
 				});
 				map.panTo(me);
-				map.setZoom(13);
+				//map.setZoom(13);
+				//attempt to zoom in smoothly
+				smoothZoom(map, 13, 5);
+				
 				var request = new XMLHttpRequest();
 
 				//FIRST CHANGE URL
