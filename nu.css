@@ -16,6 +16,12 @@ p {
   font-size: 20px;
 }
 
+.topsection{
+   background-color: black;
+   margin-top: 0px;
+  
+}
+
 #signup {
   position: absolute;
   right: 10px;
