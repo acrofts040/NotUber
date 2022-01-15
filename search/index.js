@@ -66,7 +66,7 @@ function init()
 							xhr.onload = function() {
 								let responseObj = xhr.response;
 								console.log(responseObj.water);
-								console.log(vehicles);
+								console.log(vehicles[count]);
 								
 								/*
 								marker = new google.maps.Marker({
