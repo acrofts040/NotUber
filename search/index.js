@@ -35,7 +35,6 @@ function init()
 				
 				map.setZoom(13);
 
-	
 				var request = new XMLHttpRequest();
 
 				//FIRST CHANGE URL
