@@ -65,22 +65,21 @@ function init()
 							xhr.send();
 							xhr.onload = function() {
 								let responseObj = xhr.response;
-								console.log(responseObj.water);
-								console.log(vehicles[count]);
+								//console.log(responseObj.water);
+								//console.log(vehicles[count]);
 								
-								/*
-								marker = new google.maps.Marker({
-									position: vehicleLatLng,
-									title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
-									icon: "car.png",
-									map: map
-								});
-								google.maps.event.addListener(marker, "click", function() {
-									infowindow.setContent(this.title);
-									infowindow.open(map, this);
-								});
-								*/
-								
+								if (!responseObj.water){
+									marker = new google.maps.Marker({
+										position: vehicleLatLng,
+										title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
+										icon: "car.png",
+										map: map
+									});
+									google.maps.event.addListener(marker, "click", function() {
+										infowindow.setContent(this.title);
+										infowindow.open(map, this);
+									});
+								}
 							};
 
 							
