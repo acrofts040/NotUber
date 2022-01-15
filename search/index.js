@@ -69,6 +69,8 @@ function init()
 								//console.log(vehicles[count]);
 								
 								if (!responseObj.water){
+									console.log("in");
+									console.log(count);
 									marker = new google.maps.Marker({
 										position: vehicleLatLng,
 										title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
