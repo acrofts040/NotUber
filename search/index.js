@@ -49,7 +49,7 @@ function init()
 						//BIG CHANGE
 						var vehicles = JSON.parse(request.responseText);
 						//BIG CHANGE
-						for (var count = 0; count < vehicles.length; count++) {
+						for (let count = 0; count < vehicles.length; count++) {
 							vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
 							distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
 							if (closestDistance > distance) {
