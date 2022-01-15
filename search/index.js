@@ -47,7 +47,7 @@ function init()
 					if (request.status == 200 && request.readyState == 4) {
 						closestDistance = 9999999;
 						closestVehicle = {};
-						vehicles = JSON.parse(request.responseText);
+						var vehicles = JSON.parse(request.responseText);
 						for (count = 0; count < vehicles.length; count++) {
 							vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
 							distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
