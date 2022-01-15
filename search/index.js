@@ -40,7 +40,7 @@ function init()
 
 				//FIRST CHANGE URL
 
-				//request.open("POST", "https://hans-moleman.herokuapp.com/rides");
+				
 				request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides");
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				request.onreadystatechange = function() {
@@ -55,6 +55,13 @@ function init()
 								closestDistance = distance;
 								closestVehicle = vehicleLatLng;
 							}
+							
+							//Ensure coords are valid
+							var request2 = new XMLHttpRequest();
+							request2.open("GET", "https://api.onwater.io/api/v1/results/45,45?access_token=DiidmAH8hDQbvYzXFXrU");
+							request2.send();
+							console.log(request2.status);
+							
 							marker = new google.maps.Marker({
 								position: vehicleLatLng,
 								title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
@@ -65,6 +72,11 @@ function init()
 								infowindow.setContent(this.title);
 								infowindow.open(map, this);
 							});
+							
+							
+							
+							
+							
 						}
 						google.maps.event.addListener(meMarker, "click", function() {
 							infowindow.setContent("Closest vehicle is " + closestDistance * 0.000621371 + " mi away!");
@@ -116,7 +128,7 @@ function init()
 				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
 			});
 
-			console.log("Ran");
+			//console.log("Ran");
 		}
 		else {
 			alert("Geolocation is not supported by your web browser.  What a shame!");
