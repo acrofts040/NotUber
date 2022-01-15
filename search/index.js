@@ -46,7 +46,9 @@ function init()
 					if (request.status == 200 && request.readyState == 4) {
 						closestDistance = 9999999;
 						closestVehicle = {};
+						//BIG CHANGE
 						var vehicles = JSON.parse(request.responseText);
+						//BIG CHANGE
 						for (count = 0; count < vehicles.length; count++) {
 							vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
 							distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
@@ -64,7 +66,9 @@ function init()
 							xhr.onload = function() {
 								let responseObj = xhr.response;
 								console.log(responseObj.water);
+								console.log(vehicles);
 								
+								/*
 								marker = new google.maps.Marker({
 									position: vehicleLatLng,
 									title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
@@ -75,6 +79,7 @@ function init()
 									infowindow.setContent(this.title);
 									infowindow.open(map, this);
 								});
+								*/
 								
 							};
 
