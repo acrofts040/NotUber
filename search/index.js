@@ -57,10 +57,28 @@ function init()
 							}
 							
 							//Ensure coords are valid
-							var request2 = new XMLHttpRequest();
-							request2.open("GET", "https://api.onwater.io/api/v1/results/45,45?access_token=DiidmAH8hDQbvYzXFXrU");
-							request2.send();
-							console.log(request2.status);
+							let xhr = new XMLHttpRequest();	
+							var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(vehicles[count].lat).toString() + ',' + parseFloat(vehicles[count].lng).toString() + '?access_token=DiidmAH8hDQbvYzXFXrU';    
+							xhr.open('GET', getstring);
+							xhr.responseType = 'json';
+							xhr.send();
+							xhr.onload = function() {
+								let responseObj = xhr.response;
+								console.log(responseObj.water);
+								
+								marker = new google.maps.Marker({
+									position: vehicleLatLng,
+									title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
+									icon: "car.png",
+									map: map
+								});
+								google.maps.event.addListener(marker, "click", function() {
+									infowindow.setContent(this.title);
+									infowindow.open(map, this);
+								});
+								
+							};
+
 							
 							marker = new google.maps.Marker({
 								position: vehicleLatLng,
