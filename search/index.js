@@ -44,18 +44,21 @@ function init()
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				request.onreadystatechange = function() {
 					if (request.status == 200 && request.readyState == 4) {
-						closestDistance = 9999999;
-						closestVehicle = {};
+						var closestDistance = 9999999;
+						var closestVehicle = {};
 						//BIG CHANGE
 						var vehicles = JSON.parse(request.responseText);
 						//BIG CHANGE
 						for (let count = 0; count < vehicles.length; count++) {
 							let vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
-							distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
+							let distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
+							
+							/*
 							if (closestDistance > distance) {
 								closestDistance = distance;
 								closestVehicle = vehicleLatLng;
 							}
+							*/
 							
 							//Ensure coords are valid
 							let xhr = new XMLHttpRequest();	
@@ -67,6 +70,12 @@ function init()
 								let responseObj = xhr.response;
 								//console.log(responseObj.water);
 								//console.log(vehicles[count]);
+								
+								if (closestDistance > distance && (!responseObj.water)) {
+								closestDistance = distance;
+								closestVehicle = vehicleLatLng;
+								}
+								
 								
 								if (!responseObj.water){
 									console.log("in");
