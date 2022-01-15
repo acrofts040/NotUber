@@ -58,7 +58,7 @@ function init()
 							
 							//Ensure coords are valid
 							let xhr = new XMLHttpRequest();	
-							var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(vehicles[count].lat).toString() + ',' + parseFloat(vehicles[count].lng).toString() + '?access_token=DiidmAH8hDQbvYzXFXrU';    
+							var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(vehicles[count].lat).toString() + ',' + parseFloat(vehicles[count].lng).toString() + '?access_token=uvEZfr54fHF49WRgrX4_';    
 							xhr.open('GET', getstring);
 							xhr.responseType = 'json';
 							xhr.send();
