@@ -81,22 +81,7 @@ function init()
 									});
 								}
 							};
-
-							
-							marker = new google.maps.Marker({
-								position: vehicleLatLng,
-								title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
-								icon: "car.png",
-								map: map
-							});
-							google.maps.event.addListener(marker, "click", function() {
-								infowindow.setContent(this.title);
-								infowindow.open(map, this);
-							});
-							
-							
-							
-							
+								
 							
 						}
 						google.maps.event.addListener(meMarker, "click", function() {
