@@ -67,12 +67,13 @@ p {
   margin-left: 0px !important;
 }
 
-.white{
+.White{
+  text-align:center;
   position:relative; 
   left:10px; 
   top:2px;
   height: 50px;
-  width: 50px; 
+  width: 500px; 
 }
 
 #Find {
@@ -88,8 +89,4 @@ p {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 10px;
-  position: absolute;
-  top: 70%;
-  left: 30%;
-  transform: translate(-50%, -50%);
 }
