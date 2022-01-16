@@ -69,7 +69,7 @@ p {
 
 .White{
   text-align:center;
-  position:relative; 
+  position:absolute; 
   left:10px; 
   top:2px;
   height: 50px;
