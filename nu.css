@@ -67,6 +67,15 @@ p {
   margin-left: 0px !important;
 }
 
+.white{
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+}
+
 #Find {
   background-color: #000000;
   border: 2px solid #000000;
