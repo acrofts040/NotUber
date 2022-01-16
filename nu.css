@@ -71,6 +71,8 @@ p {
   position:relative; 
   left:10px; 
   top:2px;
+  height: 50px;
+  width: 50px; 
 }
 
 #Find {
