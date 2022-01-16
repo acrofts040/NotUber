@@ -1,29 +1,33 @@
-function smoothZoom (map, max, cnt) {
-    if (cnt >= max) {
-        return;
-    }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            smoothZoom(map, max, cnt + 1);
-        });
-        setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
-    }
-} 
-
-
-
 function init()
 {
 	var myLat = 42.352271;
-@@ -48,11 +32,10 @@ function init()
+	var myLng = -71.05524200000001;
+	var me = new google.maps.LatLng(myLat, myLng);
+	var meMarker = {};
+	var myOptions = {
+		zoom: 5,
+		center: me,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map;
+	var marker;
+	var infowindow = new google.maps.InfoWindow();
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		getMyLocation();
+	}
+	function getMyLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				myLat = position.coords.latitude;
+				myLng = position.coords.longitude;
+				me = new google.maps.LatLng(myLat, myLng);
+				meMarker = new google.maps.Marker({
+					position: me,
+					title: "Here I Am",
+					//icon: "me.png",
 					map: map
 				});
-				map.panTo(me);
-				//map.setZoom(13);
-				//attempt to zoom in smoothly
-				smoothZoom(map, 13, 5);
-				//animateMapZoomTo(map, 13);
 
 				map.setZoom(13);
 
