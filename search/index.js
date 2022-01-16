@@ -28,7 +28,7 @@ function init()
 					//icon: "me.png",
 					map: map
 				});
-
+				map.panTo(me);
 				map.setZoom(13);
 
 
