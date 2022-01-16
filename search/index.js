@@ -1,86 +1,61 @@
+function smoothZoom (map, max, cnt) {
+    if (cnt >= max) {
+        return;
+    }
+    else {
+        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
+            google.maps.event.removeListener(z);
+            smoothZoom(map, max, cnt + 1);
+        });
+        setTimeout(function(){map.setZoom(cnt)}, 80); // 80ms is what I found to work well on my system -- it might not work well on all systems
+    }
+} 
+
+
+
 function init()
 {
 	var myLat = 42.352271;
-	var myLng = -71.05524200000001;
-	var me = new google.maps.LatLng(myLat, myLng);
-	var meMarker = {};
-	var myOptions = {
-		zoom: 5,
-		center: me,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map;
-	var marker;
-	var infowindow = new google.maps.InfoWindow();
-	function initMap() {
-		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		getMyLocation();
-	}
-	function getMyLocation() {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				myLat = position.coords.latitude;
-				myLng = position.coords.longitude;
-				me = new google.maps.LatLng(myLat, myLng);
-				meMarker = new google.maps.Marker({
-					position: me,
-					title: "Here I Am",
-					//icon: "me.png",
+@@ -48,11 +32,10 @@ function init()
 					map: map
 				});
 				map.panTo(me);
-				
+				//map.setZoom(13);
+				//attempt to zoom in smoothly
+				smoothZoom(map, 13, 5);
+				//animateMapZoomTo(map, 13);
+
 				map.setZoom(13);
+
+
 				var request = new XMLHttpRequest();
+
 				//FIRST CHANGE URL
-				
+				//request.open("POST", "https://hans-moleman.herokuapp.com/rides");
 				request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides");
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				request.onreadystatechange = function() {
 					if (request.status == 200 && request.readyState == 4) {
 						closestDistance = 9999999;
 						closestVehicle = {};
-						//BIG CHANGE
-						var vehicles = JSON.parse(request.responseText);
-						//BIG CHANGE
-						for (let count = 0; count < vehicles.length; count++) {
+						vehicles = JSON.parse(request.responseText);
+						for (count = 0; count < vehicles.length; count++) {
 							vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
-							let vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
 							distance = google.maps.geometry.spherical.computeDistanceBetween(me, vehicleLatLng);
 							if (closestDistance > distance) {
 								closestDistance = distance;
 								closestVehicle = vehicleLatLng;
 							}
-							
-							//Ensure coords are valid
-							let xhr = new XMLHttpRequest();	
-							var getstring = 'https://api.onwater.io/api/v1/results/' + parseFloat(vehicles[count].lat).toString() + ',' + parseFloat(vehicles[count].lng).toString() + '?access_token=uvEZfr54fHF49WRgrX4_';    
-							xhr.open('GET', getstring);
-							xhr.responseType = 'json';
-							xhr.send();
-							xhr.onload = function() {
-								let responseObj = xhr.response;
-								//console.log(responseObj.water);
-								//console.log(vehicles[count]);
-								
-								if (!responseObj.water){
-									console.log("in");
-									console.log(count);
-									console.log(vehicleLatLng);
-									marker = new google.maps.Marker({
-										position: vehicleLatLng,
-										title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
-										icon: "car.png",
-										map: map
-									});
-									google.maps.event.addListener(marker, "click", function() {
-										infowindow.setContent(this.title);
-										infowindow.open(map, this);
-									});
-								}
-							};
-								
-							
+							marker = new google.maps.Marker({
+								position: vehicleLatLng,
+								title: "Vehicle " + vehicles[count].username + " is " + distance * 0.000621371 + " mi away from you",
+								icon: "car.png",
+								map: map
+							});
+							google.maps.event.addListener(marker, "click", function() {
+								infowindow.setContent(this.title);
+								infowindow.open(map, this);
+							});
 						}
 						google.maps.event.addListener(meMarker, "click", function() {
 							infowindow.setContent("Closest vehicle is " + closestDistance * 0.000621371 + " mi away!");
@@ -130,7 +105,7 @@ function init()
 				//CHANGE 2: CHANGE PARAMS
 				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
 			});
-			//console.log("Ran");
+			console.log("Ran");
 		}
 		else {
 			alert("Geolocation is not supported by your web browser.  What a shame!");
