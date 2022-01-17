@@ -82,7 +82,7 @@ function init()
 						closestLine = new google.maps.Polyline({
 							path: [me, closestVehicle],
 							geodesic: true,
-							strokeColor: black,
+							strokeColor: "#000000",
 							strokeOpacity: 0.75,
 							strokeWeight: 10
 						});
