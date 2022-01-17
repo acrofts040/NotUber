@@ -24,7 +24,7 @@ p {
   
 }
 
-#signup {
+.signup {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -42,7 +42,7 @@ p {
   border-radius: 10px;
 }
 
-#login {
+.login {
   position: absolute;
   right: 140px;
   top: 10px;
