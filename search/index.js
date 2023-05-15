@@ -38,8 +38,8 @@ function init()
 
 				// begin call of my API
 				var request = new XMLHttpRequest();
-				request.open("POST", "https://bagged-inukshuk-96259.herokuapp.com/rides");
-				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				request.open("POST", "https://17w7nmrjl7.execute-api.us-east-1.amazonaws.com/nUberBackend");
+				request.setRequestHeader("Content-type", "application/json; charset=utf-8");
 				
 				
 				request.onreadystatechange = function() {
@@ -90,7 +90,7 @@ function init()
 						
 					}
 				}
-				request.send("username=andymobile&lat=" + myLat + "&lng=" + myLng);
+				request.send(JSON.stringify({username:"andy",lat:23,lng: 23}));
 			});
 		}
 		else {
