@@ -47,8 +47,10 @@ function init()
 					if (request.status == 200 && request.readyState == 4) {
 						closestDistance = 9999999;
 						closestVehicle = {}; //here
-						vehicles = JSON.parse(request.responseText);
+						console.log(request.responseText);
+						//vehicles = JSON.parse(request.responseText);
 						
+						/*
 						//iterate through returned vehicles
 						for (count = 0; count < vehicles.length; count++) {
 							vehicleLatLng = new google.maps.LatLng(vehicles[count].lat, vehicles[count].lng);
@@ -88,7 +90,7 @@ function init()
 							strokeWeight: 10
 						});
 						closestLine.setMap(map);
-						
+						*/
 					}
 				}
 				request.send(JSON.stringify({username:"andy",lat:23,lng: 23}));
