@@ -38,7 +38,7 @@ function init()
 
 				// begin call of my API
 				var request = new XMLHttpRequest();
-				request.open("POST", "https://17w7nmrjl7.execute-api.us-east-1.amazonaws.com/nUberBackend");
+				request.open("POST", "https://5gvu4quoa2.execute-api.us-east-1.amazonaws.com/D1/nUberBackend");
 				request.setRequestHeader("Content-type", "application/json; charset=utf-8");
 				
 				
