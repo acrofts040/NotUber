@@ -46,7 +46,7 @@ function init()
 				request.onreadystatechange = function() {
 					if (request.status == 200 && request.readyState == 4) {
 						closestDistance = 9999999;
-						closestVehicle = {};
+						closestVehicle = {}; //here
 						vehicles = JSON.parse(request.responseText);
 						
 						//iterate through returned vehicles
