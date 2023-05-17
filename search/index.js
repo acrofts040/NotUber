@@ -39,7 +39,7 @@ function init()
 				// begin call of my API
 				var request = new XMLHttpRequest();
 				request.open("POST", "https://5gvu4quoa2.execute-api.us-east-1.amazonaws.com/D1/NuberPython");
-				request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+				request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
 				request.setRequestHeader('Access-Control-Allow-Origin', '*');
 				
 				
